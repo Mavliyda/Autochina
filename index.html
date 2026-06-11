@@ -1,37 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User card generator(DOM)</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>AutoChina — Премиум запчасти из Китая с доставкой по СНГ</title>
+    <link rel="stylesheet" href="zap.css">
 </head>
 <body>
-    <main class="app">
-        <header class="header">
-<h1>User Card Generator</h1>
-<p>(DOM) + Events: click,submit,keydown,remowe()</p>
-        </header>
-        <section class="panel">
-<form action="userForm" class="form">
-    <input id="nameInput" placeholder="Name">
-    <input id="roleInput" placeholder="Role">
-    <input id="cityInput" placeholder="City">
-    <input id="imgUrlInput" placeholder="Image URL">
 
+    <header class="header">
+        <div class="container header__container">
+            <a href="#" class="logo">Auto<span>China</span></a>
+            
+            <button class="menu-burger" id="menu-burger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
 
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#about" class="nav__link">О компании</a></li>
+                    <li><a href="#catalog" class="nav__link">Каталог</a></li>
+                    <li><a href="#delivery" class="nav__link">Доставка</a></li>
+                    <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart-icon-wrapper" id="cart-toggle">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-counter" id="cart-counter">0</span>
+            </div>
+        </div>
+    </header>
 
-    <button type="submit">click my</button>
-</form>
-        </section>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-sidebar__header">
+            <h3>Ваша корзина</h3>
+            <button class="cart-sidebar__close" id="cart-close">×</button>
+        </div>
+        <div class="cart-sidebar__items" id="cart-items">
+            <p class="cart-empty-text">Корзина пока пуста</p>
+        </div>
+        <div class="cart-sidebar__footer">
+            <div class="cart-total">Итого: <span id="cart-total-price">$0</span></div>
+            <button class="btn cart-checkout-btn" id="cart-checkout">Перейти к оформлению</button>
+        </div>
+    </div>
 
-<section class="panel">
-    <h2>Users</h2>
-    <div id="users" class="users"></div>
+    <section class="hero-slider">
+        <div class="slider-container" id="slider-container">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1200&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h1>Оригинальные запчасти из Китая</h1>
+                    <p>Прямые поставки для Geely, Chery, Haval, Changan, BYD и Zeekr</p>
+                    <a href="#catalog" class="btn">Открыть каталог</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h1>Быстрая доставка по всему СНГ</h1>
+                    <p>Отправляем надежными ТК в Россию, Казахстан, Беларусь и другие страны</p>
+                    <a href="#delivery" class="btn" style="background-color: #3498db;">Подробнее о доставке</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1507136566006-cfc505b114fc?q=80&w=1200&auto=format&fit=crop');">
+                <div class="slide-content">
+                    <h1>100% Подбор по VIN-коду</h1>
+                    <p>Гарантируем точное соответствие каждой детали вашему автомобилю</p>
+                    <a href="#contacts" class="btn" style="background-color: #2ecc71;">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-dots" id="slider-dots"></div>
+    </section>
 
-</section>
-    </main>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О компании AutoChina</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Ваш надежный мост к китайским автокомпонентам</h3>
+                    <p>Мы специализируемся на профессиональном подборе и поставке оригинальных автозапчастей и качественных аналогов напрямую с заводов-изготовителей Китая. Больше никаких переплат перекупщикам!</p>
+                    <p>Работаем как с розничными автовладельцами, так и с крупными СТО и магазинами деталей по всем странам СНГ. Каждая деталь перед отправкой проходит строгий визуальный контроль и проверку на совместимость по каталогам заводов.</p>
+                    <div class="about-features">
+                        <div class="feature-badge"><span>✓</span> Только проверенные фабрики</div>
+                        <div class="feature-badge"><span>✓</span> Полный пакет документов</div>
+                        <div class="feature-badge"><span>✓</span> Оптовые цены даже на розницу</div>
+                    </div>
+                </div>
+                <div class="about-img-box">
+                    <img src="./sklad — копия.jpeg" alt="Склад запчастей">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="./index.js"></script>
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2 class="section-title">Каталог запчастей</h2>
+            <div class="grid-catalog" id="catalog-grid"></div>
+        </div>
+    </section>
+
+    <section id="delivery" class="delivery">
+        <div class="container">
+            <h2 class="section-title">Доставка по СНГ</h2>
+            <div class="delivery-cards">
+                <div class="del-card">
+                    <div class="del-card__icon">📦</div>
+                    <h4>Надежная упаковка</h4>
+                    <p>Все хрупкие элементы (оптика, стекла, кузовщина) упаковываются в прочную деревянную обрешетку.</p>
+                </div>
+                <div class="del-card">
+                    <div class="del-card__icon">🚛</div>
+                    <h4>Любые ТК на ваш выбор</h4>
+                    <p>Доставляем через СДЭК, ПЭК, Деловые Линии, КИТ, Энергия. Отправка в день оплаты заказа.</p>
+                </div>
+                <div class="del-card">
+                    <div class="del-card__icon">🌍</div>
+                    <h4>География охвата</h4>
+                    <p>Регулярные рейсы в Россию (Москва, СПБ, Сибирь), Казахстан, Беларусь, Кыргызстан и Армению.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Отзывы покупателей</h2>
+            <div class="grid-reviews" id="reviews-grid"></div>
+            <button id="open-review-modal-btn" class="btn btn-review">+ Оставить свой отзыв</button>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="review-modal">
+        <div class="modal-window">
+            <div class="modal-window__header">
+                <h3>Написать отзыв</h3>
+                <button id="close-review-modal-btn" class="modal-window__close">×</button>
+            </div>
+            <form id="add-review-form" style="padding: 20px;">
+                <div class="form-group">
+                    <label>Ваше имя:</label>
+                    <input type="text" id="review-name" placeholder="Пример: Иван И." required class="form__input">
+                </div>
+                <div class="form-group">
+                    <label>Ваше авто / Компания:</label>
+                    <input type="text" id="review-status" placeholder="Пример: Владелец Geely Monjaro" required class="form__input">
+                </div>
+                <div class="form-group">
+                    <label>Ваша оценка:</label>
+                    <select id="review-stars" class="form__input">
+                        <option value="⭐⭐⭐⭐⭐">5 из 5 (Отлично)</option>
+                        <option value="⭐⭐⭐⭐">4 из 5 (Хорошо)</option>
+                        <option value="⭐⭐⭐">3 из 5 (Нормально)</option>
+                        <option value="⭐⭐">2 из 5 (Плохо)</option>
+                        <option value="⭐">1 из 5 (Ужасно)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Текст отзыва:</label>
+                    <textarea id="review-text" placeholder="Напишите ваш отзыв здесь..." required class="form__input" style="height: 90px; resize: none;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Прикрепить фото к отзыву:</label>
+                    <input type="file" id="review-file" accept="image/*" class="form__input">
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Опубликовать на сайт</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="admin-panel" class="admin-panel style-admin-hidden">
+        <div class="container">
+            <h2 class="section-title">Панель управления запчастями (Секретный режим)</h2>
+            <div class="admin-wrapper">
+                <form id="admin-form" class="admin-form">
+                    <h3>Добавить новую деталь на сайт</h3>
+                    <div class="form-group">
+                        <label>Название запчасти:</label>
+                        <input type="text" id="admin-title" placeholder="Тормозные диски вентилируемые" required class="form__input">
+                    </div>
+                    <div class="admin-grid-inputs">
+                        <div class="form-group">
+                            <label>Марка авто:</label>
+                            <input type="text" id="admin-brand" placeholder="Geely, Chery" required class="form__input">
+                        </div>
+                        <div class="form-group">
+                            <label>Модели:</label>
+                            <input type="text" id="admin-models" placeholder="Monjaro, Tugella" required class="form__input">
+                        </div>
+                        <div class="form-group">
+                            <label>Цена ($):</label>
+                            <input type="number" id="admin-price" placeholder="150" required class="form__input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Описание:</label>
+                        <input type="text" id="admin-desc" placeholder="Усиленный ресурс" required class="form__input">
+                    </div>
+                    <div class="form-group">
+                        <label>Загрузить фото товара:</label>
+                        <input type="file" id="admin-file" accept="image/*" class="form__input">
+                    </div>
+                    <button type="submit" class="btn" style="background-color: #2ecc71; width:100%;">Опубликовать деталь</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты и Оформление заказа</h2>
+            <div class="map-wrapper" style="width: 100%; margin-top: 20px; margin-bottom: 40px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2924.444583163148!2d74.56847057659424!3d42.863456803816654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec83bdfdcf501%3A0x67db9b1a50a3000!2z0YPQuy4g0JvRjNCy0LAg0KLQvtC70YHRgtC-0LPQviwg0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1718025000000!5m2!1sru!2skg" 
+        width="100%" 
+        height="400" 
+        style="border:0; display: block;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+            <div class="contact-info-badges">
+                <div class="info-badge">
+                    <span class="info-badge__icon">📍</span>
+                    <div>
+                        <h4>Наш адрес:</h4>
+                        <p>Кыргызстан, г. Бишкек, ул. Льва Толстого, 124/1</p>
+                    </div>
+                </div>
+                <div class="info-badge">
+                    <span class="info-badge__icon">📞</span>
+                    <div>
+                        <h4>Телефон / WhatsApp:</h4>
+                        <p><a href="https://wa.me/996555123456" target="_blank" class="contact-link">+996 (555) 12-34-56</a></p>
+                    </div>
+                </div>
+                <div class="info-badge">
+                    <span class="info-badge__icon">✉️</span>
+                    <div>
+                        <h4>Электронная почта:</h4>
+                        <p><a href="mailto:info@autochina.kg" class="contact-link">info@autochina.kg</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-payment-container">
+                <div class="form-wrapper">
+                    <form class="form" id="order-form">
+                        <h3>1. Контактные данные</h3>
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required class="form__input">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Номер телефона (WhatsApp)" required class="form__input">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="form-car-vin" placeholder="Ваша корзина пуста. Выберите нужные автозапчасти в каталоге выше." required class="form__input" style="height: 100px; resize: none;"></textarea>
+                        </div>
+                        
+                        <h3 style="margin-top: 25px; margin-bottom: 15px;">2. Данные банковской карты</h3>
+                        <div class="form-group">
+                            <label>Номер карты:</label>
+                            <input type="text" id="card-input-number" placeholder="4000 1234 5678 9010" maxlength="19" required class="form__input">
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="form-group">
+                                <label>Срок действия:</label>
+                                <input type="text" id="card-input-expiry" placeholder="MM/YY" maxlength="5" required class="form__input">
+                            </div>
+                            <div class="form-group">
+                                <label>CVC / CVC2:</label>
+                                <input type="password" id="card-input-cvc" placeholder="123" maxlength="3" required class="form__input">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn form__btn" style="width: 100%; margin-top: 20px; background-color: #2ecc71; font-size: 1.1rem; padding: 14px;">Отправить заявку</button>
+                    </form>
+                </div>
+
+                <div class="card-visual-wrapper">
+                    <div class="bank-card" id="bank-card-view">
+                        <div class="bank-card__chip"></div>
+                        <div class="bank-card__number" id="card-view-number">•••• •••• •••• ••••</div>
+                        <div class="bank-card__row">
+                            <div>
+                                <div class="bank-card__label">CARDHOLDER</div>
+                                <div class="bank-card__holder">AUTOCHINA CUSTOMER</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="bank-card__label">VALID THRU</div>
+                                <div class="bank-card__expiry" id="card-view-expiry">MM/YY</div>
+                            </div>
+                        </div>
+                        <div class="bank-card__system">💳 VISA / MasterCard</div>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #888; text-align: center; margin-top: 15px; max-width: 320px;">
+                        Безопасное соединение. Данные зашифрованы по стандарту PCI-DSS.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-bottom: 10px; font-weight: 600; color: #fff;">AutoChina — Оригинальные запчасти из Китая с доставкой по СНГ.</p>
+            <p style="font-size: 0.85rem; margin-bottom: 15px;">
+                г. Бишкек, ул. Льва Толстого, 124/1 | Тел: +996 (555) 12-34-56 | Email: info@autochina.kg
+            </p>
+            <p style="font-size: 0.8rem; color: #64748b;">&copy; 2026 AutoChina. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="zap.js"></script>
 </body>
 </html>
