@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    color: #111;
+}
+img{
+    width: 100%;
+    display: block;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+header{
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.logo{
+    font-size: 24px;
+    font-weight: 700;
+}
+nav{
+    display: flex;
+    gap: 30px;
+}
+nav a{
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav a:hover{
+color: #d4af37;
+}
+.header-icons{
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    gap: 20px;
+}
+#themeBtn{
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #111;
+    color: white;
+}
+.cart-box{
+    font-size: 20px;
+}
+
+.hero{
+    height: 90vh;
+    background :url('https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1400&auto=format&fit=crop') center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0px 7%;
+
+}
+.hero-content {
+    max-width: 500px;
+    color: white;
+}
+.hero-content h1{
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.hero-content p{
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.hero-content button{
+    padding: 14px 30px;
+    border-radius: 12px;
+    background: #d4af37;
+    color: white;
+    font-size: 16px;
+}
+
+.search-section{
+padding: 40px 7%;
+}
+#searchInput{
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+}
+
+.products-section{
+    padding: 20px 7% 80px;
+}
+.products-section h2{
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+.card{
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+.card img{
+    height: 320px;
+    object-fit: cover;
+}
+.card-body{
+    padding: 20px;
+}
+.card-body h3{
+    margin-bottom: 10px;
+}
+.price{
+    color: #d4af37;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.card-buttons{
+    display: flex;
+    gap: 10px;
+}
+.add-btn,
+.view-btn{
+flex: 1;
+pad: 12px;
+border-radius: 10px;
+color: white;
+}
+.add-btn{
+    background:#111 ;
+}
+.view-btn{
+    background: #d4af37;
+}
+.modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    display: none;justify-content: center;
+    align-items: center;
+    z-index: 200;
+
+}
+.modal-content{
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+}
+.close{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.modal-content button{
+width: 100%;
+margin-top: 20px;
+padding: 14px;
+border-radius: 12px;
+background: #111;
+color: white;
+}
+.about{
+    padding: 100%;
+    background: white;
+    text-align: center;
+}
+.about h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.about p{
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+}
+footer{
+    padding: 50px 7%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+footer h3{
+    margin-bottom: 20px;
+
+}
+footer p{
+    margin: 10px 0;
+}
+.dark{
+    background: #111;
+    color: white;
+}
+.dark header,
+.dark .card,
+.dark .about,
+.dark .modal-content{
+    background: #1f1f1f;
+    color: white;}
+.dark nav a{
+    color: white;
+}
+.dark #searchInput{
+    background: #1f1f1f;
+color: white;
+}
+@media(max-width:1100px){
+    .products{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width:768px){
+    nav{
+        display: none;
+    }
+    .hero-content h1{
+        font-size: 40px;
+    }
+    .products{
+        grid-template-columns: 1fr;
+
+    }
+    .hero{
+        height: 70vh;
+    }
+}
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoChina — Автозапчасти из Китая оптом и в розницу</title>
+    <link rel="stylesheet" href="auto.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="#" class="logo">Auto<span>China</span></a>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#advantages" class="nav__link">Преимущества</a></li>
+                    <li><a href="#catalog" class="nav__link">Каталог</a></li>
+                    <li><a href="#calculator" class="nav__link">Калькулятор</a></li>
+                    <li><a href="#faq" class="nav__link">Вопросы</a></li>
+                    <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+                    <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="burger" id="burger" aria-label="Открыть меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero__container">
+            <h1 class="hero__title">Прямые поставки автозапчастей из Китая</h1>
+            <p class="hero__subtitle">Оригиналы и качественные аналоги для любых марок. Быстрая доставка, выгодные цены.</p>
+            <a href="#contacts" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card__icon">🇨🇳</div>
+                    <h3>Прямые фабрики</h3>
+                    <p>Работаем без посредников с ведущими заводами Китая, что гарантирует лучшую цену.</p>
+                </div>
+                <div class="card">
+                    <div class="card__icon">🛡️</div>
+                    <h3>Контроль качества</h3>
+                    <p>Проверяем каждую деталь перед отправкой на нашем складе в Гуанчжоу.</p>
+                </div>
+                <div class="card">
+                    <div class="card__icon">⚡</div>
+                    <h3>Быстая доставка</h3>
+                    <p>Оптимальные логистические маршруты: авто, ж/д и авиадоставка в любой регион.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <h2 class="section-title">Популярные запчасти в наличии</h2>
+            <div class="grid-4">
+                
+                <div class="product-card">
+                    <div class="product-card__badge">Популярно</div>
+                    <div class="product-card__img">🛑</div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Тормозные колодки Brembo (Аналог)</h3>
+                        <p class="product-card__desc">Для Geely Monjaro / Tugella. Высокий ресурс, без скрипа.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">$25</span>
+                            <button type="button" class="btn product-card__btn" data-product="Тормозные колодки Geely Monjaro">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__img">⚡</div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Комплект свечей зажигания NGK</h3>
+                        <p class="product-card__desc">Оригинал из Китая. Подходит для двигателей Chery Tiggo 7/8 Pro.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">$40</span>
+                            <button type="button" class="btn product-card__btn" data-product="Свечи зажигания Chery Tiggo">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__badge style-sale">Скидка</div>
+                    <div class="product-card__img">🔄</div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Фильтр масляный + воздушный</h3>
+                        <p class="product-card__desc">Комплект ТО для Changan CS75 Plus. Сертифицированный заводской Китай.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">$15</span>
+                            <button type="button" class="btn product-card__btn" data-product="Комплект ТО Changan CS75">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__img">💡</div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Светодиодная фара LED (Левая)</h3>
+                        <p class="product-card__desc">Для BYD Song Plus. Полное соответствие оригиналу, со всеми блоками.</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">$290</span>
+                            <button type="button" class="btn product-card__btn" data-product="Фара BYD Song Plus">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <h2 class="section-title">Калькулятор стоимости доставки</h2>
+            <div class="calc-wrapper">
+                <div class="calc-form">
+                    <div class="form-group">
+                        <label for="weight">Примерный вес груза (кг):</label>
+                        <input type="number" id="weight" value="10" min="1" class="form__input">
+                    </div>
+                    <div class="form-group">
+                        <label for="transport">Способ доставки:</label>
+                        <select id="transport" class="form__input">
+                            <option value="auto" data-price="3">Авто (Быстрое) — $3/кг</option>
+                            <option value="train" data-price="1.5">Ж/Д (Оптимальное) — $1.5/кг</option>
+                            <option value="air" data-price="8">Авиа (Срочное) — $8/кг</option>
+                        </select>
+                    </div>
+                    <div class="calc-result">
+                        <p>Ориентировочная стоимость: <strong id="total-price">$30</strong></p>
+                        <span class="calc-note">*Итоговая стоимость зависит от объема и категории запчастей.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <button type="button" class="faq-question">Каков минимальный объем заказа? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Мы работаем как с оптовыми клиентами, так и с розничными заказами. Минимальная сумма для заказа автозапчастей напрямую с фабрик Китая составляет всего $300.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question">Как происходит подбор запчастей? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Вы оставляете заявку с VIN-кодом автомобиля или оригинальным артикулом детали. Наши специалисты в Китае связываются напрямую с производителями и находят точное соответствие.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question">Предоставляете ли вы гарантию? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Да, на все поставляемые запчасти действует официальная гарантия завода-изготовителя (обычно от 6 до 12 месяцев). Перед отправкой мы визуально проверяем товар на брак.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <div class="grid-3">
+                <div class="review-card">
+                    <div class="review-card__stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-card__text">"Заказывал партию оптики для BYD оптом. Доставили в коробках, всё целое, упаковано на совесть. Цены вышли на 30% ниже, чем у местных поставщиков."</p>
+                    <div class="review-card__author">
+                        <strong>Александр В.</strong>
+                        <span>Владелец автосервиса</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-card__text">"Искал редкий блок ТНВД на китайский грузовик. Ребята нашли по VIN коду прямо на заводе-изготовителе в Шэньчжэне. Доставка самолетом заняла всего 8 дней."</p>
+                    <div class="review-card__author">
+                        <strong>Дмитрий К.</strong>
+                        <span>Частное лицо</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-card__stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-card__text">"Сотрудничаем по договору поставки аналогов расходников (колодки, фильтры). Контроль качества в Гуанчжоу работает отлично, за полгода ни одного брака."</p>
+                    <div class="review-card__author">
+                        <strong>Игорь Станиславович</strong>
+                        <span>Сеть магазинов запчастей</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container contacts__container">
+            
+            <div class="form-wrapper">
+                <h2 class="form-title">Оформить заявку</h2>
+                <p style="margin-bottom: 20px; color: #666;">Заполните форму, и наш менеджер свяжется с вами для подтверждения заказа и расчета доставки.</p>
+                <form class="form" id="order-form">
+                    <input type="text" placeholder="Ваше имя" required class="form__input">
+                    <input type="tel" placeholder="Номер телефона" required class="form__input">
+                    <input type="text" id="form-car-vin" placeholder="Марка авто, VIN-код или выбранный товар" class="form__input">
+                    
+                    <div class="form-group" style="margin-bottom: 5px;">
+                        <label style="font-size: 0.9rem; font-weight: 600;">Способ оплаты:</label>
+                        <select id="payment-method" class="form__input" style="background-color: #fff;">
+                            <option value="cash">Оплата при получении (Офис / Склад)</option>
+                            <option value="card">Онлайн-оплата банковской картой</option>
+                        </select>
+                    </div>
+
+                    <div id="card-payment-block" class="card-payment-block" style="display: none;">
+                        <div class="credit-card">
+                            <div class="credit-card__logo">💳 Pay</div>
+                            <div class="credit-card__number" id="preview-card-number">•••• •••• •••• ••••</div>
+                            <div class="credit-card__flex">
+                                <div class="credit-card__holder" id="preview-card-holder">CARDHOLDER NAME</div>
+                                <div class="credit-card__expiry" id="preview-card-expiry">MM/YY</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-inputs">
+                            <input type="text" id="card-number" placeholder="Номер карты" class="form__input" maxlength="19">
+                            <div class="grid-3" style="gap: 10px;">
+                                <input type="text" id="card-expiry" placeholder="ММ/ГГ" class="form__input" maxlength="5">
+                                <input type="password" id="card-cvc" placeholder="CVC" class="form__input" maxlength="3">
+                            </div>
+                            <input type="text" id="card-holder" placeholder="Имя держателя (LAT)" class="form__input" style="text-transform: uppercase;">
+                        </div>
+                    </div>
+
+                    <label class="form__checkbox-label">
+                        <input type="checkbox" required checked class="form__checkbox">
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                    
+                    <button type="submit" class="btn form__btn">Отправить заявку</button>
+                </form>
+            </div>
+
+            <div class="address-wrapper">
+                <h2 class="form-title">Наш офис и склад</h2>
+                <div class="address-info">
+                    <p>📍 <strong>Адрес офиса:</strong> г. Москва, ул. Автомобильная, д. 15, офис 402</p>
+                    <p>🇨🇳 <strong>Склад в Китае:</strong> Guangdong Province, Guangzhou, Liwan District</p>
+                    <p>📞 <strong>Телефон:</strong> +7 (495) 123-45-67</p>
+                    <p>✉️ <strong>Email:</strong> info@autochina-parts.ru</p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.622504%2C55.753215&z=12" width="100%" height="250" frameborder="0" allowfullscreen="true" style="position:relative; border-radius: 8px;"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>&copy; 2026 AutoChina. Все права защищены.</p>
+            <p>Поставки запчастей из Китая под ключ.</p>
+        </div>
+    </footer>
+
+    <script src="auto.js"></script>
+</body>
+</html>

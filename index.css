@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1220;
+    color: #eaf1ff;
+}
+
+.app{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+.header{
+    margin-bottom: 16px;
+}
+.header h1{
+    margin: 0;
+}
+.header p{
+    margin: 6px 0 0;
+    opacity: 0.75;
+}
+.panel{
+    background: #0f1a2f;
+    border: 1px solid rgba(255,255,255, 0.12);
+    border-radius: 14px;
+    padding: 16px;
+}
+.users{
+display: grid;
+gap: 12px;
+margin-top: 12px;
+}
+.card{
+    background: rgba(255,255,255, 0.03);
+    border: 1px solid rgba(255,255,255, 0.12);
+    border-radius: 14px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+.avatar{
+    width: 56px;
+height: 56px;
+border-radius: 12px;
+object-fit: cover;
+border: 1px solid rgba(255,255,255, 0.12);
+}
+.name{
+    margin: 0;
+    font-size: 16px;
+}
+.meta{
+    margin: 6px 0 0;
+    opacity: 0.75;
+    font-size: 13px;
+}
+.form{
+display: flex;
+gap: 10px;
+margin-bottom: 12px;
+}
+.form input{
+    padding: 3px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255, 0.03);
+    background: #36c37e;
+    color: #fff;
+}
+.form button{
+    padding: 8px 14px ;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #36c37e;
+    color: #333;
+    font-weight: bold;
+}
+    

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madina Store</title>
+    <link rel="stylesheet" href="./practika.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="logo">MADINA STORE</div>
+        <nav>
+            <a href="./home.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+        <div class="header-icons">
+<button id="themeBtn">🌙</button>
+<div class="cart-box">🛒
+    <span id="cartCount">0</span>
+</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+<h1>NEW COLLECTION 2026</h1>
+<p>Style that makes you inforgettable</p>
+<button>Shop Now</button>
+        </div>
+    </section>
+
+    <section class="search-section">
+<input type="text" id="searchInput" placeholder="Search Products...">
+    </section>
+
+    <section class="product-section" id="products">
+<h2>Popular Products</h2>
+<div class="products" id="productsContainer"></div>
+    </section>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+<span class="close">✖</span>
+
+
+<img src="data:image/jpeg;base64,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" alt="" id="modalImage">
+
+<h2 id="modalTitle"></h2>
+<p id="modalPrice"></p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<button>Add to Card</button>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+<div class="about-text">
+    <h2>About Us</h2>
+    <p>
+        We create modern fashion collections for people who love style,elegance and comfort.
+    </p>
+</div>
+    </section>
+
+    <footer id="contact">
+<h3>Madina Store </h3>
+<p>Email:Madinastore@gmail.com</p>
+<p>Phone: +996 707 000 000 </p>
+</footer>
+<script src="./practika.js"></script>
+</body>
+</html>

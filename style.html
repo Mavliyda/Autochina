@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persistent Todo (LocalStorage + JSON)</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="app" aria-labelledby="app-title">
+<header class="app__header">
+<h1 id="app-title">Todo</h1>
+<p class="app__subtitle">LocalStorage menen saktaluuchu tizme (LocalStorage + JSON)</p>
+</header>
+
+<section class="card" aria-label="add new task">
+<form id="todoForm" class="form" autocomplete="off">
+<label for="taskInput" class="sr-only">Tapshyrma</label>
+<input
+id="taskInput"
+type="text"
+class="input"
+placeholder="add a task..."
+maxlength="120"
+required
+/>
+<button class="icon-btn danger">Ochuruu</button>
+<button class="btn btn--primary" type="submit">Koshuu</button>
+</form>
+<div class="toolbar" aria-label="Filters and actions">
+<div class="filters" role="tablist" aria-label="Task filter">
+    <button class="chip is-active" type="button" data-filter="all" role="tab" aria-selected="true">
+        Baary
+    </button>
+    <button class="chip is-active" type="button" data-filter="all" role="tab" aria-selected="false">
+        Aktivduu
+    </button>
+    <button class="chip is-active" type="button" data-filter="all" role="tab" aria-selected="false">
+        Atkarylgan
+    </button>
+</div>
+<div class="actions">
+    <button id="clearCompletedBtn" class="btn btn--ghost" type="button">
+        Atkarylgandardy tazaloo
+    </button>
+</div>
+</div>
+
+<div class="stats" aria-live="polite">
+    <span id="statsText" >0 tapshyrma</span>
+</div>
+</section>
+
+<section class="card" aria-label="Task list">
+<ul id="taskList" class="list" aria-label="Tasks"></ul>
+
+<p id="emptyState" class="empty">
+    Azyryncha tapshyrma jok
+</p>
+</section>
+    </main>
+
+    <script src="./style.js"></script>
+</body>
+</html>
